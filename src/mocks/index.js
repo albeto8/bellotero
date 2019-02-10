@@ -12,3 +12,14 @@ export const globalInfoMock = { data: {
     ]
   }
 }};
+
+export const configuratorInfoMock = {
+  loading: false,
+  configuratorInfo: {
+    calculator: {
+      title: '',
+      description: ''
+    }
+  },
+  error: ''
+};
