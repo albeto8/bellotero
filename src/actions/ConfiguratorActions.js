@@ -6,7 +6,7 @@ import {
 } from './types';
 import { BASE_URL } from '../api'
 
-export const getGlobalInfo = () => async (dispatch) => {
+export const getConfiguratorInfo = () => async (dispatch) => {
   dispatch({ type: CONFIGURATOR_INFO_LOADING });
   try {
     const response = await axios.get(`${BASE_URL}/page2.json'`)

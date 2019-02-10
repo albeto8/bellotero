@@ -20,7 +20,7 @@ export default (state = INITIAL_STATE, action) => {
     case CONFIGURATOR_INFO_LOADING:
       return {...state, loading: true };
     case CONFIGURATORL_INFO_LOAD_SUCCESS:
-      return {...state, loading: false, globalInfo: action.payload };
+      return {...state, loading: false, configuratorInfo: action.payload };
     case CONFIGURATOR_INFO_LOAD_FAIL:
       return {...state, loading: false, error: action.payload };
     default:
