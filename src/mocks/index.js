@@ -23,3 +23,14 @@ export const configuratorInfoMock = {
   },
   error: ''
 };
+
+export const testimonialInfoMock = {
+  loading: false,
+  testimonialInfo: {
+    slider: {
+      title: '',
+      reviews: []
+    }
+  },
+  error: ''
+};
