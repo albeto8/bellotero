@@ -7,18 +7,10 @@ import {
   GLOBAL_INFO_LOAD_SUCCESS,
   GLOBAL_INFO_LOAD_FAIL
 } from '../actions/types';
+import { globalInfoMock } from '../mocks';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-
-const globalInfoMock = { data: {
-  menu: {
-    items: [
-      { text: 'Testimonial', route: 'page-1' },
-      { text: 'Configurator', route: 'page-2' }
-    ]
-  }
-}}
 
 beforeEach(() => {
   moxios.install();
