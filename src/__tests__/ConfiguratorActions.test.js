@@ -25,7 +25,7 @@ describe('Getting success call from configuration action', () => {
     moxios.uninstall();
   });
 
-  it('It gets global info action success', async (done) => {
+  it('It gets configurator action success', async (done) => {
     const expectedActions = [
       { type: CONFIGURATOR_INFO_LOADING },
       { type: CONFIGURATOR_INFO_LOAD_SUCCESS, payload: configuratorInfoMock },
@@ -54,7 +54,7 @@ describe('Getting error call from configurator action', () => {
     moxios.uninstall();
   });
 
-  it('It gets global info action error 404', async (done) => {
+  it('It gets configurator action error 404', async (done) => {
     const expectedActions = [
       { type: CONFIGURATOR_INFO_LOADING },
       { type: CONFIGURATOR_INFO_LOAD_FAIL, payload: 'Error: Request failed with status code 404' },
