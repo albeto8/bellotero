@@ -1,6 +1,6 @@
 export const initialStateMock = {
   loading: false,
-  globalInfo: {},
+  globalInfo: { menu: { items: [] }},
   error: ''
 };
 

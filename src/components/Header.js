@@ -9,17 +9,30 @@ class Header extends React.Component {
     this.props.getGlobalInfo();
   }
 
-  render() {
-    console.log(this.props);
+  renderRightMenuItems() {
+    const { globalInfo, loading } = this.props;
+    if (loading) {
+      return null;
+    }
     return (
-      <div className="ui secondary pointing menu">
+       globalInfo.menu.items.map(item => {
+         return (
+           <Link key={item.text} to={`/${item.route}`} className="item" >
+             {item.text}
+           </Link>
+         );
+       })
+    );
+  }
+
+  render() {
+    return (
+      <div className="ui menu">
         <Link to="/" className="item" >
           Bellotero
         </Link>
         <div className="right menu">
-          <Link to="/" className="item" >
-            Bellotero
-          </Link>
+          {this.renderRightMenuItems()}
         </div>
       </div>
     )
