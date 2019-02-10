@@ -6,7 +6,7 @@ import {
 
 const INITIAL_STATE = {
   loading: false,
-  globalInfo: [],
+  globalInfo: {},
   error: ''
 };
 
