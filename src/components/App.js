@@ -8,17 +8,17 @@ import colors from './styles/Colors';
 const App = () => {
   return (
     <div style={{ backgroundColor: colors.background }}>
-      <div className="ui container">
         <BrowserRouter>
           <div>
             <Header />
-            <Route path="/" exact component={Testimonial} />
-            <Route path="/page-1" exact component={Testimonial} />
-            <Route path="/page-2" exact component={Configurator} />
+              <div className="ui container" style={{ backgroundColor: colors.background }}>
+              <Route path="/" exact component={Testimonial} />
+              <Route path="/page-1" exact component={Testimonial} />
+              <Route path="/page-2" exact component={Configurator} />
+            </div>
           </div>
         </BrowserRouter>
       </div>
-    </div>
   );
 }
 

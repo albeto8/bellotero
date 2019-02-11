@@ -47,11 +47,13 @@ class Header extends React.Component {
     return (
       <div style={container}>
         <div className="ui secondary menu">
-          <Link to="/" className="item">
-            <img src={logo} alt="logo" style={imageStyle} />
-          </Link>
-          <div className="right menu">
-            {this.renderRightMenuItems()}
+          <div className="ui container">
+            <Link to="/" className="item">
+              <img src={logo} alt="logo" style={imageStyle} />
+            </Link>
+            <div className="right menu">
+              {this.renderRightMenuItems()}
+            </div>
           </div>
         </div>
       </div>
