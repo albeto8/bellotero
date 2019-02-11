@@ -2,17 +2,23 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { getGlobalInfo } from '../actions';
-import colors from './styles/Colors'
+import colors from './styles/Colors';
+import logo from '../images/bellotero@3x.png';
 
 const container = {
-  backgroundColor: colors.background,
-  marginTop: 5
+  backgroundColor: 'white',
+  marginTop: 5,
 }
 
 const menuText = {
   color: colors.blueColor,
   fontFamily: 'Roboto',
   fontWeight: 500
+}
+
+const imageStyle ={
+  width: 133,
+  height: 26
 }
 
 class Header extends React.Component {
@@ -40,9 +46,9 @@ class Header extends React.Component {
   render() {
     return (
       <div style={container}>
-        <div className="ui menu">
-          <Link to="/" className="item" >
-            <p style={menuText}>Bellotero</p>
+        <div className="ui secondary menu">
+          <Link to="/" className="item">
+            <img src={logo} alt="logo" style={imageStyle} />
           </Link>
           <div className="right menu">
             {this.renderRightMenuItems()}
