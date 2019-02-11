@@ -13,12 +13,27 @@ const labelTextStyle = {
   color: '#161616',
   fontFamily: 'Roboto',
   fontWeight: 700,
-  fontSize: '14px'
+  fontSize: '14px',
+  marginRight: 10
+}
+
+const currencyText = {
+  color: colors.blueColor,
+  fontFamily: 'Roboto',
+  fontWeight: 500,
+  fontSize: '30px',
+  marginBottom: 0
 }
 
 const container = {
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'flex-start'
+}
+
+const textContainer = {
+  display: 'flex',
+  justifyContent: 'center',
   alignItems: 'center'
 }
 
@@ -26,7 +41,10 @@ const ResultLabel = ({ label, value }) => {
   const fixedValue =  Number.parseFloat(value).toFixed(2);
   return (
     <div style={container}>
-      <p style={valueTextStyle}>${fixedValue}</p>
+      <div style={textContainer}>
+        <p style={currencyText}>$</p>
+        <p style={valueTextStyle}>{fixedValue}</p>
+      </div>
       <p style={labelTextStyle}>{label}</p>
     </div>
   )
