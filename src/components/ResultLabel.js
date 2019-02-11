@@ -14,7 +14,13 @@ const labelTextStyle = {
   fontFamily: 'Roboto',
   fontWeight: 700,
   fontSize: '14px',
-  marginRight: 10
+  marginRight: 10,
+}
+
+const labelContainer = {
+  display: 'flex',
+  width: '100%',
+  justifyContent: 'flex-end'
 }
 
 const currencyText = {
@@ -45,7 +51,9 @@ const ResultLabel = ({ label, value }) => {
         <p style={currencyText}>$</p>
         <p style={valueTextStyle}>{fixedValue}</p>
       </div>
-      <p style={labelTextStyle}>{label}</p>
+      <div style={labelContainer}>
+        <p style={labelTextStyle}>{label}</p>
+      </div>
     </div>
   )
 }
