@@ -29,24 +29,48 @@ const labelTextStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center'
+  ,width: 160
 }
 
-const ValueBox = ({ value }) => {
+const currencyText = {
+  color: '#d6dcff',
+  fontFamily: 'Roboto',
+  fontWeight: 400,
+  fontSize: '24px',
+  marginBottom: 0,
+  marginRight: '34px'
+}
+
+const valueText = {
+  fontFamily: 'Roboto',
+  fontWeight: 400,
+  fontSize: '36px'
+}
+
+const valueTextContainer = {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center'
+}
+
+const ValueBox = ({ value, currency }) => {
+  const curencySign = currency ? <p style={currencyText}>$</p> : null;
   return (
     <div className="ui card" style={valueBoxContainer}>
-      <div className="content">
-        <div className="center aligned header">{value}</div>
+      <div className="content" style={valueTextContainer}>
+        {curencySign}
+        <div style={valueText}>{value}</div>
       </div>
     </div>
   )
 }
 
-const SliderLabel = ({ label, value, onChange, min, max, step }) => {
+const SliderLabel = ({ label, value, onChange, min, max, step, currency }) => {
   return (
     <div style={container}>
       <div style={labelContainer}>
         <p style={labelTextStyle}>{label}</p>
-        <ValueBox value={value}/>
+        <ValueBox value={value} currency={currency}/>
       </div>
       <div style={sliderContainer}>
         <Slider

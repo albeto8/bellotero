@@ -115,6 +115,7 @@ class Configurator extends React.Component {
         value={monthlyIngredientSpending}
         aria-labelledby="label"
         onChange={this.handleMonthChange}
+        currency
       />
     );
   }
