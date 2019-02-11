@@ -2,7 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { getGlobalInfo } from '../actions';
-import './Header.css';
+import colors from './styles/Colors'
+
+  const container = {
+    backgroundColor: colors.background,
+    marginTop: 0
+  }
 
 class Header extends React.Component {
 
@@ -28,7 +33,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="header">
+      <div style={container}>
         <div className="ui menu">
           <Link to="/" className="item" >
             Bellotero

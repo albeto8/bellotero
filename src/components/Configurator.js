@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { getConfiguratorInfo } from '../actions';
-import './Configurator.css';
 import TitleBox from './TitleBox';
 import SliderLabel from './SliderLabel';
 import ResultLabel from './ResultLabel';
