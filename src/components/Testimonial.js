@@ -7,7 +7,7 @@ import TitleBox from './TitleBox';
 const mainContainer = {
   marginTop: 5,
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   justifyContent: 'flex-start',
   height: '80vh',
   flexDirection: 'column'
@@ -45,24 +45,14 @@ class Testimonial extends React.Component {
       return null;
     }
     return (
-      <TestimonialBox review={reviews[reviewIndex]}/>
+      <TestimonialBox
+        review={reviews[reviewIndex]}
+        onPreviousClick={this.onPreviousClick.bind(this)}
+        onNextClick={this.onNextClick.bind(this)}
+        index={reviewIndex + 1}
+        length={reviews.length}
+      />
     );
-  }
-
-  renderPagination() {
-    const { reviews } = this.props.testimonialInfo.slider;
-    const { reviewIndex } = this.state;
-    return (
-      <div>
-        <div>{reviewIndex + 1} / {reviews.length}</div>
-        <button onClick={this.onPreviousClick.bind(this)}>
-          Previous
-        </button>
-        <button onClick={this.onNextClick.bind(this)}>
-          Next
-        </button>
-      </div>
-    )
   }
 
   render() {
@@ -72,7 +62,6 @@ class Testimonial extends React.Component {
         <TitleBox title={title} />
         <div>
           {this.renderTestimonialBox()}
-          {this.renderPagination()}
         </div>
       </div>
     );
