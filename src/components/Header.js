@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { getGlobalInfo } from '../actions';
+import './Header.css';
 
 class Header extends React.Component {
 
@@ -27,12 +28,14 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="ui menu">
-        <Link to="/" className="item" >
-          Bellotero
-        </Link>
-        <div className="right menu">
-          {this.renderRightMenuItems()}
+      <div className="header">
+        <div className="ui menu">
+          <Link to="/" className="item" >
+            Bellotero
+          </Link>
+          <div className="right menu">
+            {this.renderRightMenuItems()}
+          </div>
         </div>
       </div>
     )

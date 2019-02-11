@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import Slider from '@material-ui/lab/Slider';
 import { getConfiguratorInfo } from '../actions';
+import './Configurator.css';
 
 class Configurator extends React.Component {
 
@@ -71,14 +72,23 @@ class Configurator extends React.Component {
   }
 
   render() {
-    const { title } = this.props.configuratorInfo.calculator;
+    const { title, description } = this.props.configuratorInfo.calculator;
     return (
-      <div>
-        {title}
-        {this.renderEmployeesSlider()}
-        {this.renderMonthSlider()}
-        {this.renderFoodCostSaving()}
-        {this.renderAnnualSavings()}
+      <div className="mainContainer">
+        <div className="textContainer">
+          <div className="titleText">
+            {title}
+          </div>
+          <div>
+            {description}
+          </div>
+        </div>
+        <div className="sliderContainer">
+          {this.renderEmployeesSlider()}
+          {this.renderMonthSlider()}
+          {this.renderFoodCostSaving()}
+          {this.renderAnnualSavings()}
+        </div>
       </div>
     );
   }
