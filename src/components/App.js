@@ -6,7 +6,7 @@ import Header from './Header';
 
 const App = () => {
   return (
-    <div className="ui container">
+    <div className="ui container" style={{ backgroundColor: '#f9faff' }}>
       <BrowserRouter>
         <div>
           <Header />

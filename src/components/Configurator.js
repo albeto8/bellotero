@@ -11,7 +11,6 @@ const mainContainer = {
   justifyContent: 'center',
   flex: 1,
   height: '80vh',
-  backgroundColor: '#f9faff'
 };
 
 const textContainer = {
