@@ -1,14 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import Slider from '@material-ui/lab/Slider';
 import { getConfiguratorInfo } from '../actions';
 import './Configurator.css';
 import TitleBox from './TitleBox';
+import SliderLabel from './SliderLabel';
+import colors from './styles/Colors';
 
 const mainContainer = {
   marginTop: 5,
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   justifyContent: 'center',
   flex: 1,
   height: '80vh',
@@ -24,18 +25,8 @@ const textContainer = {
 }
 
 const sliderContainer =  {
-  flex: 1
-}
-
-const titleText = {
-  fontFamily: 'Roboto-Black',
-  fontSize: '36px',
-  color: 'white',
-  fontWeight: 'bold',
-  marginLeft: '4px',
-  marginRight: '4px',
-  marginTop: '8px',
-  marginBottom: '8px'
+  flex: 1,
+  marginTop: 100,
 }
 
 const descriptionText = {
@@ -44,14 +35,7 @@ const descriptionText = {
   width: '349px',
   display: 'flex',
   flex: 1,
-  marginTop: '32px'
-}
-
-const titleBackground = {
-  height: '40px',
-  backgroundColor: '#071eb3',
-  display: 'flex',
-  alignItems: 'center'
+  marginTop: '32px',
 }
 
 class Configurator extends React.Component {
@@ -91,33 +75,30 @@ class Configurator extends React.Component {
   renderEmployeesSlider() {
     const { fullTimeEmployees } = this.state;
     return (
-      <div>
-        <p>Employees Slider {fullTimeEmployees}</p>
-        <Slider
-          min={1}
-          max={10}
-          step={1}
-          value={fullTimeEmployees}
-          aria-labelledby="label"
-          onChange={this.handleEmployeesChange}
-        />
-      </div>
+      <SliderLabel
+        label={'Full-time employees that process invoices'}
+        min={1}
+        max={10}
+        step={1}
+        value={fullTimeEmployees}
+        aria-labelledby="label"
+        onChange={this.handleEmployeesChange}
+      />
     );
   }
 
   renderMonthSlider() {
     const { monthlyIngredientSpending } = this.state;
     return (
-      <div>
-        <p>Monthly Ingredient spending {monthlyIngredientSpending}</p>
-        <Slider
-          min={10}
-          max={100}
-          value={monthlyIngredientSpending}
-          aria-labelledby="label"
-          onChange={this.handleMonthChange}
-        />
-      </div>
+      <SliderLabel
+        label={'Monthly ingredient spending'}
+        min={10}
+        max={100}
+        step={0.1}
+        value={monthlyIngredientSpending}
+        aria-labelledby="label"
+        onChange={this.handleMonthChange}
+      />
     );
   }
 

@@ -4,7 +4,8 @@ const style = {
   backgroundColor: '#071eb3',
   color: 'white',
   fontSize: '36px',
-  marginTop: 100
+  marginTop: 100,
+  fontFamily: 'Roboto-Black'
 }
 
 const TitleBox = ({ title }) => {
