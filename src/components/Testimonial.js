@@ -3,6 +3,15 @@ import { connect } from 'react-redux'
 import { getTestimonialInfo } from '../actions';
 import TestimonialBox from './TestimonialBox';
 
+const mainContainer = {
+  marginTop: 5,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-start',
+  height: '80vh',
+  flexDirection: 'column'
+};
+
 class Testimonial extends React.Component {
 
   state = {
@@ -55,10 +64,12 @@ class Testimonial extends React.Component {
   render() {
     const { title } = this.props.testimonialInfo.slider;
     return (
-      <div>
-        {title}
-        {this.renderTestimonialBox()}
-        {this.renderPagination()}
+      <div style={mainContainer}>
+        <div>{title}</div>
+        <div>
+          {this.renderTestimonialBox()}
+          {this.renderPagination()}
+        </div>
       </div>
     );
   }
