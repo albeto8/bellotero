@@ -25,7 +25,10 @@ const sliderContainer = {
 const labelTextStyle = {
   fontFamily: 'Roboto-Bold',
   fontWeight: 'bold',
-  fontSize: '14px'
+  fontSize: '14px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
 }
 
 const ValueBox = ({ value }) => {

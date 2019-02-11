@@ -4,13 +4,13 @@ import { getConfiguratorInfo } from '../actions';
 import './Configurator.css';
 import TitleBox from './TitleBox';
 import SliderLabel from './SliderLabel';
-import colors from './styles/Colors';
+import ResultLabel from './ResultLabel';
 
 const mainContainer = {
   marginTop: 5,
   display: 'flex',
-  alignItems: 'flex-start',
-  justifyContent: 'center',
+  alignItems: 'center',
+  justifyContent: 'flex-start',
   flex: 1,
   height: '80vh',
 };
@@ -27,6 +27,10 @@ const textContainer = {
 const sliderContainer =  {
   flex: 1,
   marginTop: 100,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'space-between',
+  justifyContent: 'flex-start',
 }
 
 const descriptionText = {
@@ -36,6 +40,12 @@ const descriptionText = {
   display: 'flex',
   flex: 1,
   marginTop: '32px',
+}
+
+const resultsContainer = {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'flex-start',
 }
 
 class Configurator extends React.Component {
@@ -55,20 +65,28 @@ class Configurator extends React.Component {
   }
 
   handleMonthChange = (event, value) => {
-    this.setState({ monthlyIngredientSpending: value, foodCostSaving: value * 0.3 });
+    const foodCostSaving = value * 0.3;
+    const monthlyIngredientSpending = value;
+    this.setState({ monthlyIngredientSpending, foodCostSaving });
   }
 
   renderFoodCostSaving() {
     const { foodCostSaving } = this.state;
     return (
-      <p>Estimated Food Cost Saving {foodCostSaving}</p>
+      <ResultLabel
+        label={'Estimated Food Cost Saving '}
+        value={foodCostSaving}
+      />
     );
   }
 
   renderAnnualSavings() {
     const { foodCostSaving, fullTimeEmployees } = this.state;
     return (
-      <p>Your estimated annual savings {fullTimeEmployees * 1337 + foodCostSaving}</p>
+      <ResultLabel
+        label={'Your estimated annual savings'}
+        value={fullTimeEmployees * 1337 + foodCostSaving}
+      />
     );
   }
 
@@ -113,8 +131,10 @@ class Configurator extends React.Component {
         <div style={sliderContainer}>
           {this.renderMonthSlider()}
           {this.renderEmployeesSlider()}
-          {this.renderFoodCostSaving()}
-          {this.renderAnnualSavings()}
+          <div style={resultsContainer}>
+            {this.renderFoodCostSaving()}
+            {this.renderAnnualSavings()}
+          </div>
         </div>
       </div>
     );
