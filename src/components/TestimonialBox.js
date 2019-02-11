@@ -105,10 +105,10 @@ const PaginationBox = ({ index, length, onPreviousClick, onNextClick }) => {
       <div style={pageIndexContainer}>
         <p style={indexTextStyle}>{index} / {length}</p>
       </div>
-      <button class="ui button" style={arrowContainerStyle} onClick={onPreviousClick}>
+      <button className="ui button" style={arrowContainerStyle} onClick={onPreviousClick}>
         <Icon style={arrowIconStyle}>arrow_back</Icon>
       </button>
-      <button  class="ui button" style={arrowContainerStyle} onClick={onNextClick}>
+      <button  className="ui button" style={arrowContainerStyle} onClick={onNextClick}>
         <Icon style={arrowIconStyle}>arrow_forward</Icon>
       </button>
     </div>
