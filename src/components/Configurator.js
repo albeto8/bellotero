@@ -4,6 +4,56 @@ import Slider from '@material-ui/lab/Slider';
 import { getConfiguratorInfo } from '../actions';
 import './Configurator.css';
 
+const mainContainer = {
+  marginTop: 5,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flex: 1,
+  height: '80vh',
+  backgroundColor: '#f9faff'
+};
+
+const textContainer = {
+  flex: 1,
+  alignItems: 'flex-start',
+  marginLeft: 80,
+  justifyContent: 'center',
+  display: 'flex',
+  flexDirection: 'column'
+}
+
+const sliderContainer =  {
+  flex: 1
+}
+
+const titleText = {
+  fontFamily: 'Roboto-Black',
+  fontSize: '36px',
+  color: 'white',
+  fontWeight: 'bold',
+  marginLeft: '4px',
+  marginRight: '4px',
+  marginTop: '8px',
+  marginBottom: '8px'
+}
+
+const descriptionText = {
+  fontFamily: 'Roboto-Regular',
+  fontSize: '16px',
+  width: '349px',
+  display: 'flex',
+  flex: 1,
+  marginTop: '32px'
+}
+
+const titleBackground = {
+  height: '40px',
+  backgroundColor: '#071eb3',
+  display: 'flex',
+  alignItems: 'center'
+}
+
 class Configurator extends React.Component {
 
   state = {
@@ -71,21 +121,26 @@ class Configurator extends React.Component {
     );
   }
 
-  render() {
-    const { title, description } = this.props.configuratorInfo.calculator;
+  renderTitleBox() {
+    const { title } = this.props.configuratorInfo.calculator;
     return (
-      <div className="mainContainer">
-        <div className="textContainer">
-          <div className="titleText">
-            {title}
-          </div>
-          <div>
-            {description}
-          </div>
+      <div style={titleBackground}>
+        <div style={titleText}>{title}</div>
+      </div>
+    );
+  }
+
+  render() {
+    const { description } = this.props.configuratorInfo.calculator;
+    return (
+      <div style={mainContainer}>
+        <div style={textContainer}>
+          {this.renderTitleBox()}
+          <div style={descriptionText}>{description}</div>
         </div>
-        <div className="sliderContainer">
-          {this.renderEmployeesSlider()}
+        <div style={sliderContainer}>
           {this.renderMonthSlider()}
+          {this.renderEmployeesSlider()}
           {this.renderFoodCostSaving()}
           {this.renderAnnualSavings()}
         </div>
