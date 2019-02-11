@@ -24,7 +24,7 @@ const sliderContainer = {
 
 const labelTextStyle = {
   fontFamily: 'Roboto',
-  fontWeight: 500,
+  fontWeight: 700,
   fontSize: '14px',
   display: 'flex',
   alignItems: 'center',
