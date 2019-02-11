@@ -12,6 +12,7 @@ const App = () => {
         <BrowserRouter>
           <div>
             <Header />
+            <Route path="/" exact component={Testimonial} />
             <Route path="/page-1" exact component={Testimonial} />
             <Route path="/page-2" exact component={Configurator} />
           </div>
