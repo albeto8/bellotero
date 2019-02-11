@@ -9,7 +9,7 @@ import ResultLabel from './ResultLabel';
 const mainContainer = {
   marginTop: 5,
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   justifyContent: 'flex-start',
   flex: 1,
   height: '80vh',
@@ -18,7 +18,6 @@ const mainContainer = {
 const textContainer = {
   flex: 1,
   alignItems: 'flex-start',
-  marginLeft: 80,
   justifyContent: 'center',
   display: 'flex',
   flexDirection: 'column'
@@ -34,7 +33,8 @@ const sliderContainer =  {
 }
 
 const descriptionText = {
-  fontFamily: 'Roboto-Regular',
+  fontFamily: 'Roboto',
+  fontWeight: 400,
   fontSize: '16px',
   width: '349px',
   display: 'flex',
@@ -65,8 +65,8 @@ class Configurator extends React.Component {
   }
 
   handleMonthChange = (event, value) => {
-    const foodCostSaving = value * 0.3;
-    const monthlyIngredientSpending = value;
+    const foodCostSaving = Number.parseFloat(value * 0.3).toFixed(3);
+    const monthlyIngredientSpending = Number.parseFloat(value).toFixed(3);;;
     this.setState({ monthlyIngredientSpending, foodCostSaving });
   }
 

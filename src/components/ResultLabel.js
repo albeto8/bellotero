@@ -17,7 +17,9 @@ const labelTextStyle = {
 }
 
 const container = {
-  margin: 0
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center'
 }
 
 const ResultLabel = ({ label, value }) => {

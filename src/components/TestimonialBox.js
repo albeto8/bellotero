@@ -36,9 +36,10 @@ const textPositionStyle = {
 }
 
 const commentTextStyle = {
+  fontFamily: 'Roboto',
   fontSize: '24px',
   color: '#161616',
-  fontWeight: 'bold',
+  fontWeight: 500,
   marginTop: '32px',
   marginRight: '32px',
 }
