@@ -30,9 +30,9 @@ const labelTextStyle = {
 
 const ValueBox = ({ value }) => {
   return (
-    <div class="ui card" style={valueBoxContainer}>
-      <div class="content">
-        <div class="center aligned header">{value}</div>
+    <div className="ui card" style={valueBoxContainer}>
+      <div className="content">
+        <div className="center aligned header">{value}</div>
       </div>
     </div>
   )
