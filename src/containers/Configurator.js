@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { getConfiguratorInfo } from '../actions';
-import TitleBox from './TitleBox';
-import SliderLabel from './SliderLabel';
-import ResultLabel from './ResultLabel';
+import TitleBox from '../components/TitleBox';
+import SliderLabel from '../components/SliderLabel';
+import ResultLabel from '../components/ResultLabel';
 
 const mainContainer = {
   marginTop: 5,

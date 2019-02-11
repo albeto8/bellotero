@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { getTestimonialInfo } from '../actions';
-import TestimonialBox from './TestimonialBox';
-import TitleBox from './TitleBox';
+import TestimonialBox from '../components/TestimonialBox';
+import TitleBox from '../components/TitleBox';
 
 const mainContainer = {
   marginTop: 5,

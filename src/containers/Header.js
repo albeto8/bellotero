@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { getGlobalInfo } from '../actions';
-import colors from './styles/Colors';
+import colors from '../components/styles/Colors';
 import logo from '../images/bellotero@3x.png';
 
 const container = {

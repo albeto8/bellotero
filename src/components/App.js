@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Testimonial from './Testimonial';
-import Configurator from './Configurator';
-import Header from './Header';
+import Testimonial from '../containers/Testimonial';
+import Configurator from '../containers/Configurator';
+import Header from '../containers/Header';
 import colors from './styles/Colors';
 
 const App = () => {
