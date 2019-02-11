@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { getTestimonialInfo } from '../actions';
 import TestimonialBox from './TestimonialBox';
+import TitleBox from './TitleBox';
 
 const mainContainer = {
   marginTop: 5,
@@ -68,7 +69,7 @@ class Testimonial extends React.Component {
     const { title } = this.props.testimonialInfo.slider;
     return (
       <div style={mainContainer}>
-        <p style={{ backgroundColor: '#071eb3', color: 'white', fontSize: '36px' }}>{title}</p>
+        <TitleBox title={title} />
         <div>
           {this.renderTestimonialBox()}
           {this.renderPagination()}

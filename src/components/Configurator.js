@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Slider from '@material-ui/lab/Slider';
 import { getConfiguratorInfo } from '../actions';
 import './Configurator.css';
+import TitleBox from './TitleBox';
 
 const mainContainer = {
   marginTop: 5,
@@ -120,21 +121,12 @@ class Configurator extends React.Component {
     );
   }
 
-  renderTitleBox() {
-    const { title } = this.props.configuratorInfo.calculator;
-    return (
-      <div style={titleBackground}>
-        <div style={titleText}>{title}</div>
-      </div>
-    );
-  }
-
   render() {
-    const { description } = this.props.configuratorInfo.calculator;
+    const { description, title } = this.props.configuratorInfo.calculator;
     return (
       <div style={mainContainer}>
         <div style={textContainer}>
-          {this.renderTitleBox()}
+          <TitleBox title={title}/>
           <div style={descriptionText}>{description}</div>
         </div>
         <div style={sliderContainer}>
