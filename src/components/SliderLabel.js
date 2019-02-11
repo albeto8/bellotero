@@ -23,8 +23,8 @@ const sliderContainer = {
 }
 
 const labelTextStyle = {
-  fontFamily: 'Roboto-Bold',
-  fontWeight: 'bold',
+  fontFamily: 'Roboto',
+  fontWeight: 500,
   fontSize: '14px',
   display: 'flex',
   alignItems: 'center',
