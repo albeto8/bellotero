@@ -3,12 +3,15 @@ import React from 'react';
 const container = {
   backgroundColor: 'white',
   display: 'flex',
-  flexDirection: 'row'
+  flexDirection: 'row',
+  width: 1000,
+  justifyContent: 'center'
 };
 
 const nameContainer = {
   display: 'flex',
-  flex: 1
+  flex: 1,
+  flexDirection: 'column'
 };
 
 const commentContainer = {
@@ -16,13 +19,12 @@ const commentContainer = {
   flex: 2
 };
 
-
 const TestimonialBox = ({ review }) => {
   return (
     <div style={container}>
       <div style={nameContainer}>
-        {review.name}
-        {review.position}
+        <h2>{review.name}</h2>
+        <div>{review.position}</div>
       </div>
       <div style={commentContainer}>
         {review.comment}
