@@ -49,8 +49,11 @@ class Testimonial extends React.Component {
   }
 
   renderPagination() {
+    const { reviews } = this.props.testimonialInfo.slider;
+    const { reviewIndex } = this.state;
     return (
       <div>
+        <div>{reviewIndex + 1} / {reviews.length}</div>
         <button onClick={this.onPreviousClick.bind(this)}>
           Previous
         </button>
