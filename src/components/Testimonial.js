@@ -68,7 +68,7 @@ class Testimonial extends React.Component {
     const { title } = this.props.testimonialInfo.slider;
     return (
       <div style={mainContainer}>
-        <div>{title}</div>
+        <p style={{ backgroundColor: '#071eb3', color: 'white', fontSize: '36px' }}>{title}</p>
         <div>
           {this.renderTestimonialBox()}
           {this.renderPagination()}
